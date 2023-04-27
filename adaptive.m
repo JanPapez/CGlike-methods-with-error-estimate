@@ -7,7 +7,7 @@ function es = adaptive(k, add, es)
 % Jan Papez, Petr Tichy, May 2023
 %       https://github.com/JanPapez/CGlike-methods-with-error-estimate
 
-verbatim = true;   % print info?
+verbatim = false;   % print info?
 
 % initialization
 if k == 0
@@ -45,7 +45,7 @@ else
             es.delay(ell) = d;
             es.estim(ell) = sqrt(den + es.Delta(k));
             if verbatim
-                fprintf('Iteration %d: estimated error = %f \n', ell, es.estim(ell));
+                fprintf('Iteration %d: estimated error = %e \n', ell, es.estim(ell));
             end
             ell = ell + 1; d = d - 1;
             den = sum(es.Delta(ell:k-1));
