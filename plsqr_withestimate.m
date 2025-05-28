@@ -58,7 +58,7 @@ for k = 1:maxit
     % additional iterations
 end
 
-x = L'\x;
+x = LT\x;
 
 %% output
 
